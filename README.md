@@ -1,62 +1,62 @@
-Workflow and Documentation
+# Workflow and Documentation
 
-Documentation
+## Documentation
 
-Captain.h
-o	Observes how many boats are left
+**Captain.h**
+>! Observes how many boats are left
 
 std::list<weak_ptr<Lifeboat>> mSightedBoats
-o	Sight of lifeboats
+>!	Sight of lifeboats
 
 bool BoatsHere()
-o	If no boats here, returns false
+>!	If no boats here, returns false
 
-Crew.h
-o	Hold a boat and can accidentally drop it
+**Crew.h**
+>!	Hold a boat and can accidentally drop it
 
 constant float DROP_CHANCE
-o	Constant drop chance, 5%
+>!	Constant drop chance, 5%
 
 shared_ptr<Lifeboat> mBoat
-o	Lifeboat connected to Crew
+>!	Lifeboat connected to Crew
 
 void Drop()
-o	Method to possibly accidentally drop boat
+>!	Method to possibly accidentally drop boat
 
-Lifeboat.h
-o	Two instances, gets destroyed when crew shared_ptr is lost
+**Lifeboat.h**
+>!	Two instances, gets destroyed when crew shared_ptr is lost
 
 constant int CAPACITY
-o	Constant cap of boats, 20
+>!	Constant cap of boats, 20
 
 std∷list<shared_ptr<Passenger>> mPassengers
-o	Passengers on the boat
+>!	Passengers on the boat
 
 void AddPassenger(shared_ptr<Passenger>)
-o	No logic, simply adds Passenger to mPassengers
+>!	No logic, simply adds Passenger to mPassengers
 
 ~Lifeboat()
-o	Prints number of mPassengers when destroyed
+>!	Prints number of mPassengers when destroyed
 
-Passenger.h
-o	People who need to get on boats
+**Passenger.h**
+>!	People who need to get on boats
 
 enum gender
-o	Types of gender, male and female
+>!	Types of gender, male and female
 
 int age
-o	Below CHILD_MAX means is a child
+>!	Below CHILD_MAX means is a child
 
 const int CHILD_MAX
-o	Max age to be considered a child, 10
+>!	Max age to be considered a child, 10
 
 gender mGender
 
 bool mTried
-o	Set to true if failed first try
+>!	Set to true if failed first try
 
 Passenger()
-o	Randomizes creation of age and gender
+>!	Randomizes creation of age and gender
 
 int GetGender()
 
@@ -66,7 +66,7 @@ bool HadTried()
 
 -----------------------------------------
 
-Workflow
+## Workflow
 
 Steps:
 1.	Outlay and understand the project
@@ -81,9 +81,9 @@ Increase readability of README to move on to UML
 
 -----------------------------------------
 
-End-Product
+## End-Product
 
-Directions
+### Directions
 
 The more technical the topic, the harder it is to make a relatable assignment.
 Sooo... how about lifeboats on the Titanic.  Except in this version it's in the Caribbean and there are no sharks.  So everyone splashes around for a while and nobody dies.  Then they all go to Papas and Beer.
@@ -113,7 +113,7 @@ Output:
 Lifeboat's destructor should print how many people got on it.  It get destroyed when the last Crew object lets go
 After Captain detects all boats are gone, output how many people will be swimming to shore because they were left behind
 
-Notes
+### Notes
 
 Passengers don't do anything
 Captains look on the edge seeing how many lifeboats are left (weak_ptr)
