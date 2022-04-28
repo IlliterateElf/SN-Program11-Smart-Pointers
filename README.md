@@ -5,7 +5,7 @@
 **Captain.h**
 >! Observes how many boats are left
 
-std::list<weak_ptr<Lifeboat>> mSightedBoats
+std::list<weak_ptr\<Lifeboat\>> mSightedBoats
 >!	Sight of lifeboats
 
 bool BoatsHere()
@@ -17,7 +17,7 @@ bool BoatsHere()
 constant float DROP_CHANCE
 >!	Constant drop chance, 5%
 
-shared_ptr<Lifeboat> mBoat
+shared_ptr\<Lifeboat\> mBoat
 >!	Lifeboat connected to Crew
 
 void Drop()
@@ -29,26 +29,28 @@ void Drop()
 constant int CAPACITY
 >!	Constant cap of boats, 20
 
-std∷list<shared_ptr<Passenger>> mPassengers
+std∷list<shared_ptr\<Passenger\>> mPassengers
 >!	Passengers on the boat
 
-void AddPassenger(shared_ptr<Passenger>)
->!	No logic, simply adds Passenger to mPassengers
+Lifeboat()
 
 ~Lifeboat()
 >!	Prints number of mPassengers when destroyed
 
+void AddPassenger(shared_ptr\<Passenger\>)
+>!	No logic, simply adds Passenger to mPassengers
+
 **Passenger.h**
 >!	People who need to get on boats
 
-enum gender
+static enum gender
 >!	Types of gender, male and female
 
-int age
->!	Below CHILD_MAX means is a child
-
-const int CHILD_MAX
+const int CHILD_AGE
 >!	Max age to be considered a child, 10
+
+int mAge
+>!	Below CHILD_AGE means is a child
 
 gender mGender
 
@@ -58,7 +60,7 @@ bool mTried
 Passenger()
 >!	Randomizes creation of age and gender
 
-int GetGender()
+gender GetGender()
 
 int GetAge()
 
