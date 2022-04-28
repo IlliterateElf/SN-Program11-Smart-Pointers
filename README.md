@@ -70,10 +70,14 @@ Workflow
 
 Steps:
 1.	Outlay and understand the project
-2.	Create the documentation of possible implementation
+2.	Create the documentation of possible implementation (CURRENT)
 3.	Transfer documentation to UML diagram
 4.	Code implementation
 5.	Revise 
+
+TODO:
+
+Increase readability of README to move on to UML
 
 -----------------------------------------
 
