@@ -3,7 +3,7 @@
 class Passenger
 {
 public:
-	static enum gender {
+	static const enum GENDER {
 		male,
 		female
 	};
@@ -11,12 +11,13 @@ public:
 private:
 	static const int CHILD_AGE;
 	int mAge;
-	gender mGender;
+	GENDER mGender;
 	bool mTried;
 
 public:
-	gender GetGender();
+	GENDER GetGender();
 	int GetAge();
 	bool HadTried();
 };
 
+const enum Passenger::GENDER;

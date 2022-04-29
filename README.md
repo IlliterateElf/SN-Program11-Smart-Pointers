@@ -43,7 +43,7 @@ void AddPassenger(shared_ptr\<Passenger\>)
 **Passenger.h**
 >!	People who need to get on boats
 
-static enum gender
+static const enum GENDER
 >!	Types of gender, male and female
 
 const int CHILD_AGE
@@ -52,7 +52,7 @@ const int CHILD_AGE
 int mAge
 >!	Below CHILD_AGE means is a child
 
-gender mGender
+GENDER mGender
 
 bool mTried
 >!	Set to true if failed first try
@@ -60,7 +60,7 @@ bool mTried
 Passenger()
 >!	Randomizes creation of age and gender
 
-gender GetGender()
+GENDER GetGender()
 
 int GetAge()
 
@@ -74,7 +74,7 @@ Steps:
 1.	Outlay and understand the project
 2.	Create the documentation of possible implementation
 3.	Transfer documentation to UML diagram
-4.	Code implementation **(CURRENT**
+4.	Code implementation **(CURRENT)**
 5.	Revise 
 
 TODO:
