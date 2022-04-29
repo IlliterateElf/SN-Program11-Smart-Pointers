@@ -12,9 +12,9 @@ private:
 	static const int CAP;
 	std::list<std::shared_ptr<Passenger>> mPassengers;
 
-	~Lifeboat();
-
 public:
+	Lifeboat();
+	~Lifeboat();
 	void AddPassenger(std::shared_ptr<Passenger> tPerson);
 };
 

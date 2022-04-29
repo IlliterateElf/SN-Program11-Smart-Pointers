@@ -16,9 +16,9 @@ private:
 	GENDER mGender;
 	bool mTried;
 
+public:
 	Passenger();
 
-public:
 	GENDER GetGender();
 	int GetAge();
 	bool HadTried();

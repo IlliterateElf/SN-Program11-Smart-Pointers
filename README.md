@@ -5,6 +5,9 @@
 **Captain.h**
 >! Observes how many boats are left
 
+Captain(weak_ptr<Lifeboat> t1, weak_ptr<Lifeboat> t2)
+>! Initializes boats with boat pointers
+
 std::list<weak_ptr\<Lifeboat\>> mSightedBoats
 >!	Sight of lifeboats
 
@@ -31,6 +34,8 @@ constant int CAPACITY
 
 std∷list<shared_ptr\<Passenger\>> mPassengers
 >!	Passengers on the boat
+
+Lifeboat()
 
 ~Lifeboat()
 >!	Prints number of mPassengers when destroyed
