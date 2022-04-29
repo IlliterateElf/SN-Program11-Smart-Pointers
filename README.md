@@ -79,7 +79,7 @@ Steps:
 
 TODO:
 
-Work on UML
+Complete Lifeboat.cpp
 
 -----------------------------------------
 
