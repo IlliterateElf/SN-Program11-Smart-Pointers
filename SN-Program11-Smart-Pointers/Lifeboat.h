@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <list>
+#include <iostream>
 
 class Passenger;
 
@@ -11,7 +12,6 @@ private:
 	static const int CAP;
 	std::list<std::shared_ptr<Passenger>> mPassengers;
 
-	Lifeboat();
 	~Lifeboat();
 
 public:

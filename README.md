@@ -32,8 +32,6 @@ constant int CAPACITY
 std∷list<shared_ptr\<Passenger\>> mPassengers
 >!	Passengers on the boat
 
-Lifeboat()
-
 ~Lifeboat()
 >!	Prints number of mPassengers when destroyed
 
