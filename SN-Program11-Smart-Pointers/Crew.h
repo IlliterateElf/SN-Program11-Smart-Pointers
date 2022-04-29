@@ -1,16 +1,18 @@
 #pragma once
 #include <memory>
+#include <stdlib.h>
+#include <time.h>
 
 class Lifeboat;
 
 class Crew
 {
 private:
-	static const float DROP_CHANCE;
+	static const int DROP_CHANCE;
 	std::shared_ptr<Lifeboat> mBoat;
 
 public:
 	void Drop();
 };
 
-const float Crew::DROP_CHANCE = 0.5;
+const int Crew::DROP_CHANCE = 5;

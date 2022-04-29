@@ -14,7 +14,7 @@ bool BoatsHere()
 **Crew.h**
 >!	Hold a boat and can accidentally drop it
 
-constant float DROP_CHANCE
+static constant intDROP_CHANCE
 >!	Constant drop chance, 5%
 
 shared_ptr\<Lifeboat\> mBoat
