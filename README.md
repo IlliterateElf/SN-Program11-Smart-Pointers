@@ -77,7 +77,7 @@ Steps:
 
 TODO:
 
-Complete Lifeboat.cpp
+Implement classes to complete program intention in main
 
 -----------------------------------------
 
