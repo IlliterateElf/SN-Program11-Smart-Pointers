@@ -73,8 +73,8 @@ bool HadTried()
 Steps:
 1.	Outlay and understand the project
 2.	Create the documentation of possible implementation
-3.	Transfer documentation to UML diagram **(CURRENT)**
-4.	Code implementation
+3.	Transfer documentation to UML diagram
+4.	Code implementation **(CURRENT**
 5.	Revise 
 
 TODO:
