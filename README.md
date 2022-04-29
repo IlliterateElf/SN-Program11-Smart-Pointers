@@ -5,7 +5,7 @@
 **Captain.h**
 >! Observes how many boats are left
 
-Captain(weak_ptr<Lifeboat> t1, weak_ptr<Lifeboat> t2)
+Captain(std::shared_ptr\<Lifeboat\> boat1, std::shared_ptr\<Lifeboat\> boat2)
 >! Initializes boats with boat pointers
 
 std::list<weak_ptr\<Lifeboat\>> mSightedBoats
@@ -20,7 +20,7 @@ bool BoatsHere()
 static constant intDROP_CHANCE
 >!	Constant drop chance, 5%
 
-shared_ptr\<Lifeboat\> mBoat
+shared_ptr\<Lifeboat\> GetBoat();
 >!	Lifeboat connected to Crew
 
 void Drop()

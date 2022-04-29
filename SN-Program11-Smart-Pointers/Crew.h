@@ -13,6 +13,7 @@ private:
 
 public:
 	void Drop();
+	std::shared_ptr<Lifeboat> GetBoat();
 };
 
 const int Crew::DROP_CHANCE = 5;

@@ -9,3 +9,7 @@ void Crew::Drop() {
 		mBoat = nullptr;
 	}
 }
+
+std::shared_ptr<Lifeboat> Crew::GetBoat() {
+	return mBoat;
+}

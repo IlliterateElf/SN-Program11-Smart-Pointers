@@ -3,7 +3,7 @@
 #include <memory>
 #include <list>
 
-class Lifeboat;
+#include "Lifeboat.h"
 
 class Captain
 {
@@ -11,7 +11,7 @@ private:
 	std::list<std::weak_ptr<Lifeboat>> mSightedBoats;
 
 public:
-	Captain(std::weak_ptr<Lifeboat> t1, std::weak_ptr<Lifeboat> t2);
+	Captain(std::shared_ptr<Lifeboat> boat1, std::shared_ptr<Lifeboat> boat2);
 
 	bool BoatsHere();
 };
