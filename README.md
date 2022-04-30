@@ -5,7 +5,7 @@
 **Captain.h**
 >! Observes how many boats are left
 
-Captain(weak_ptr<Lifeboat> t1, weak_ptr<Lifeboat> t2)
+Captain(shared_ptr\<Lifeboat\> boat1, shared_ptr\<Lifeboat\> boat2)
 >! Initializes boats with boat pointers
 
 std::list<weak_ptr\<Lifeboat\>> mSightedBoats
@@ -17,10 +17,13 @@ bool BoatsHere()
 **Crew.h**
 >!	Hold a boat and can accidentally drop it
 
-static constant intDROP_CHANCE
+const int DROP_CHANCE
 >!	Constant drop chance, 5%
 
-shared_ptr\<Lifeboat\> mBoat
+Crew(Lifeboat tBoat)
+>! Init mBoat
+
+shared_ptr\<Lifeboat\> GetBoat();
 >!	Lifeboat connected to Crew
 
 void Drop()
@@ -29,7 +32,7 @@ void Drop()
 **Lifeboat.h**
 >!	Two instances, gets destroyed when crew shared_ptr is lost
 
-constant int CAPACITY
+const int CAPACITY
 >!	Constant cap of boats, 20
 
 std∷list<shared_ptr\<Passenger\>> mPassengers
@@ -40,13 +43,13 @@ Lifeboat()
 ~Lifeboat()
 >!	Prints number of mPassengers when destroyed
 
-void AddPassenger(shared_ptr\<Passenger\>)
->!	No logic, simply adds Passenger to mPassengers
+bool AddPassenger(shared_ptr\<Passenger\> tPerson)
+>!	Adds tPerson to mPassengers if not at CAP. Returns true if added, false if didn't
 
 **Passenger.h**
 >!	People who need to get on boats
 
-static const enum GENDER
+const enum GENDER
 >!	Types of gender, male and female
 
 const int CHILD_AGE
@@ -67,6 +70,8 @@ GENDER GetGender()
 
 int GetAge()
 
+void SetTried(bool tTried)
+
 bool HadTried()
 
 -----------------------------------------
@@ -77,12 +82,12 @@ Steps:
 1.	Outlay and understand the project
 2.	Create the documentation of possible implementation
 3.	Transfer documentation to UML diagram
-4.	Code implementation **(CURRENT)**
-5.	Revise 
+4.	Code implementation
+5.	Revise **(CURRENT)**
 
 TODO:
 
-Implement classes to complete program intention in main
+Fix any found code bugs
 
 -----------------------------------------
 

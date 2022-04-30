@@ -1,7 +1,9 @@
 #include "Captain.h"
 
-Captain::Captain(std::weak_ptr<Lifeboat> t1, std::weak_ptr<Lifeboat> t2)
+Captain::Captain(std::shared_ptr<Lifeboat> boat1, std::shared_ptr<Lifeboat> boat2)
 {
+	std::weak_ptr<Lifeboat> t1 = boat1;
+	std::weak_ptr<Lifeboat> t2 = boat2;
 	mSightedBoats.push_back(t1);
 	mSightedBoats.push_back(t2);
 }

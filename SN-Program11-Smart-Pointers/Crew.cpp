@@ -1,5 +1,11 @@
 #include "Crew.h"
 
+Crew::Crew(Lifeboat tBoat)
+{
+	std::shared_ptr<Lifeboat> temp(&tBoat);
+	mBoat = temp;
+}
+
 void Crew::Drop() {
 	int chance;
 	srand(time(NULL));
@@ -8,4 +14,8 @@ void Crew::Drop() {
 	{
 		mBoat = nullptr;
 	}
+}
+
+std::shared_ptr<Lifeboat> Crew::GetBoat() {
+	return mBoat;
 }

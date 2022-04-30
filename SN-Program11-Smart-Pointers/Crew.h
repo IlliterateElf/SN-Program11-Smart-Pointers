@@ -3,16 +3,16 @@
 #include <stdlib.h>
 #include <time.h>
 
-class Lifeboat;
+#include "Lifeboat.h"
 
 class Crew
 {
 private:
-	static const int DROP_CHANCE;
+	const int DROP_CHANCE = 5;
 	std::shared_ptr<Lifeboat> mBoat;
 
 public:
+	Crew(Lifeboat tBoat);
 	void Drop();
+	std::shared_ptr<Lifeboat> GetBoat();
 };
-
-const int Crew::DROP_CHANCE = 5;

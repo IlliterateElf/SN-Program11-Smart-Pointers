@@ -9,13 +9,11 @@ class Passenger;
 class Lifeboat
 {
 private:
-	static const int CAP;
+	const int CAP = 20;
 	std::list<std::shared_ptr<Passenger>> mPassengers;
 
 public:
 	Lifeboat();
 	~Lifeboat();
-	void AddPassenger(std::shared_ptr<Passenger> tPerson);
+	bool AddPassenger(std::shared_ptr<Passenger> tPerson);
 };
-
-const int Lifeboat::CAP = 20;

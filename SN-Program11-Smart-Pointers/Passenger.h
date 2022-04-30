@@ -5,13 +5,13 @@
 class Passenger
 {
 public:
-	static const enum GENDER {
+	const enum GENDER {
 		male,
 		female
 	};
+	const int CHILD_AGE = 10;
 
 private:
-	static const int CHILD_AGE;
 	int mAge;
 	GENDER mGender;
 	bool mTried;
@@ -21,7 +21,6 @@ public:
 
 	GENDER GetGender();
 	int GetAge();
+	void SetTried(bool tTried);
 	bool HadTried();
 };
-
-const enum Passenger::GENDER;

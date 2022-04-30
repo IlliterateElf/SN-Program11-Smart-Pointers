@@ -1,11 +1,16 @@
 #include "Lifeboat.h"
 
+Lifeboat::Lifeboat() {}
 Lifeboat::~Lifeboat()
 {
 	std::cout << "Passengers on boat: " << mPassengers.size() << std::endl;
 }
 
-void Lifeboat::AddPassenger(std::shared_ptr<Passenger> tPerson)
+bool Lifeboat::AddPassenger(std::shared_ptr<Passenger> tPerson)
 {
-	mPassengers.push_back(tPerson);
+	if(mPassengers.size() != CAP) {
+		mPassengers.push_back(tPerson);
+		return true;
+	}
+	return false;
 }
