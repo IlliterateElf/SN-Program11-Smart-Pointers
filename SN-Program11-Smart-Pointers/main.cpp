@@ -8,6 +8,7 @@
 
 int main()
 {
+    srand(time(NULL));
     std::queue<std::shared_ptr<Passenger>> passengerQueue;
 
     Lifeboat boat1; //Init team and boats
@@ -24,20 +25,26 @@ int main()
 
     while (!passengerQueue.empty() && captain.BoatsHere()) //Passengers get on boats
     {
-        if (passengerQueue.front()->GetGender() == Passenger::GENDER::female
+        if (passengerQueue.front()->GetGender() == Gender::female
             || passengerQueue.front()->GetAge() < passengerQueue.front()->CHILD_AGE
             || passengerQueue.front()->HadTried() == true)
         {
-            boat1.AddPassenger(passengerQueue.front());
-            passengerQueue.pop();
-            crew1.Drop();
-            continue;
+            if (!crew1.DroppedBoat())
+            {
+                if(boat1.AddPassenger(passengerQueue.front())) {
+                    passengerQueue.pop();
+                    crew1.Drop();
+                    continue;
+                }
+            }
         }
-        else if(boat2.AddPassenger(passengerQueue.front()))
+        else if(!crew2.DroppedBoat())
         {
-            passengerQueue.pop();
-            crew2.Drop();
-            continue;
+            if (boat2.AddPassenger(passengerQueue.front())) {
+                passengerQueue.pop();
+                crew2.Drop();
+                continue;
+            }
         }
         passengerQueue.front()->SetTried(true);
         passengerQueue.push(passengerQueue.front());

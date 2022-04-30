@@ -1,25 +1,25 @@
 #pragma once
 #include <stdlib.h>
 #include <time.h>
-
+enum class Gender
+{
+	male,
+	female
+};
 class Passenger
 {
 public:
-	const enum GENDER {
-		male,
-		female
-	};
 	const int CHILD_AGE = 10;
 
 private:
 	int mAge;
-	GENDER mGender;
+	Gender mGender;
 	bool mTried;
 
 public:
 	Passenger();
 
-	GENDER GetGender();
+	Gender GetGender();
 	int GetAge();
 	void SetTried(bool tTried);
 	bool HadTried();

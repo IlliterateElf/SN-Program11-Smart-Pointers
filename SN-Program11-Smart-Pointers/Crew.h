@@ -13,6 +13,8 @@ private:
 
 public:
 	Crew(Lifeboat tBoat);
+
 	void Drop();
+	bool DroppedBoat();
 	std::shared_ptr<Lifeboat> GetBoat();
 };

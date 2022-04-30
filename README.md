@@ -29,6 +29,11 @@ shared_ptr\<Lifeboat\> GetBoat();
 void Drop()
 >!	Method to possibly accidentally drop boat
 
+bool DroppedBoat()
+>!	Returns if boat was dropped or not
+
+shared_ptr<Lifeboat> GetBoat()
+
 **Lifeboat.h**
 >!	Two instances, gets destroyed when crew shared_ptr is lost
 
@@ -49,8 +54,8 @@ bool AddPassenger(shared_ptr\<Passenger\> tPerson)
 **Passenger.h**
 >!	People who need to get on boats
 
-const enum GENDER
->!	Types of gender, male and female
+enum class Gender
+>!	Types of gender, male(0) and female(1), outside class scope
 
 const int CHILD_AGE
 >!	Max age to be considered a child, 10
@@ -87,7 +92,8 @@ Steps:
 
 TODO:
 
-Fix any found code bugs
+Fix memory bug
+Fix cohesion with public constants
 
 -----------------------------------------
 

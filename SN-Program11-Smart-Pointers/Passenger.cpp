@@ -2,13 +2,12 @@
 
 Passenger::Passenger()
 {
-	srand(time(NULL));
 	mAge = rand() % 100 + 1;
-	mGender = static_cast<GENDER>(rand() % 2 + 1);
+	mGender = static_cast<Gender>(rand() % 2);
 	mTried = false;
 }
 
-Passenger::GENDER Passenger::GetGender()
+Gender Passenger::GetGender()
 {
 	return mGender;
 }

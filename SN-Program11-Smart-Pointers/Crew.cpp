@@ -8,12 +8,20 @@ Crew::Crew(Lifeboat tBoat)
 
 void Crew::Drop() {
 	int chance;
-	srand(time(NULL));
 	chance = rand() % 100 + 1;
 	if (chance < DROP_CHANCE)
 	{
 		mBoat = nullptr;
 	}
+}
+
+bool Crew::DroppedBoat()
+{
+	if (mBoat == nullptr)
+	{
+		return true;
+	}
+	return false;
 }
 
 std::shared_ptr<Lifeboat> Crew::GetBoat() {
